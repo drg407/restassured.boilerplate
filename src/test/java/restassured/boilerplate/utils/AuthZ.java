@@ -14,7 +14,7 @@ public class AuthZ extends Base {
                 .formParam("assertion_type", "FILL THIS IN").when().post("https://authorizationURLgoeshere/token");
 
         JsonPath responseBody = response.jsonPath();
-        logger.info("Access Token is:  " + responseBody.get("access_token").toString());
+        System.out.println("Access Token is:  " + responseBody.get("access_token").toString());
 
         return responseBody.get("access_token").toString();
     }
